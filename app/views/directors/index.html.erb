@@ -18,8 +18,11 @@
         <td><%= director.user.email %></td>
         <td>
           <a href="/directors/<%= director.id %>" class="btn btn-primary">Show</a>
-          <a href="/directors/<%= director.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_director/<%= director.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == director.user %>
+            <a href="/directors/<%= director.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_director/<%= director.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
