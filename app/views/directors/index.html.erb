@@ -15,7 +15,7 @@
 
       <% @directors.each do |director| %>
       <tr>
-        <td><%= director.user_id %></td>
+        <td><%= director.user.email %></td>
         <td>
           <a href="/directors/<%= director.id %>" class="btn btn-primary">Show</a>
           <a href="/directors/<%= director.id %>/edit" class="btn btn-warning">Edit</a>
